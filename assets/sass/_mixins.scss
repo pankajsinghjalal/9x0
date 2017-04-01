@@ -1,0 +1,37 @@
+@mixin alignitems($al) {
+	-webkit-align-items: $al;
+	-ms-align-items: $al;
+	-moz-align-items: $al;
+	align-items: $al;
+}
+
+@mixin justifycontents($jc){
+	-webkit-justify-content: $jc;
+	-ms-justify-content: $jc;
+	-moz-justify-content: $jc;
+	justify-content: $al;	
+}
+
+@mixin bp-medium {
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin bp-small{
+	@media only screen and (max-width: 480px){
+		@content;
+	}
+}
+
+@mixin flex-basis($fb) {
+	-webkit-flex-basis: $fb;
+	-moz-flex-basis: $fb;
+	-ms-flex-basis: $fb;
+	flex-basis: $fb;
+}
+
+@mixin font-size($size){
+	font-size: $size;
+	font-size: calcrem($size);
+}

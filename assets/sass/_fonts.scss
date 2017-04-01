@@ -1,0 +1,15 @@
+@font-face {
+	font-family: didact;
+	src: url(../vendor/didact-gothic/DidactGothic.ttf);
+}
+
+@font-face {
+	font-family: opensans;
+	src: url(../vendor/open-sans/OpenSans-Regular.ttf);
+}
+
+@function calcrem($size){
+	$remsize: $size/16px;
+	@return $remsize * 1rem;
+}
+

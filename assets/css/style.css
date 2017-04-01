@@ -1,0 +1,499 @@
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of
+  * content. Table of content is use display the overall tree structure of your
+  * Layout.
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following color code and add your own as this is just and
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+  -------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following typography and add your own as this is just and
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type="button"],
+input[type="submit"],
+button
+a {
+  cursor: pointer; }
+
+strong {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
+img {
+  vertical-align: middle;
+  border: 0; }
+
+sub,
+sup {
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+  vertical-align: baseline; }
+
+sup {
+  top: -.7em; }
+
+sub {
+  bottom: -.25em; }
+
+/* 1.2. Clear Fix
+========================================================================== */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " "; }
+
+.cf:after {
+  clear: both; }
+
+/*.cf {
+	*zoom: 1;
+}*/
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+.futura-bold-font {
+  font-family: "Futura Bold", "Gill Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold; }
+
+@font-face {
+  font-family: didact;
+  src: url(../vendor/didact-gothic/DidactGothic.ttf); }
+@font-face {
+  font-family: opensans;
+  src: url(../vendor/open-sans/OpenSans-Regular.ttf); }
+header .header-flex, header .search, .news .news-flex, .hollywood .hollywood-flex {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex; }
+
+.wrapper {
+  width: 75.46%;
+  max-width: 1132px;
+  margin: 0 auto; }
+
+a {
+  display: inline-block; }
+
+img {
+  width: 100%;
+  height: auto; }
+
+/*header start*/
+header {
+  position: relative;
+  background-color: #0f69d6;
+  box-shadow: 5px 5px 4px 0px #b7b7b7; }
+  header .header-flex {
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    justify-content: space-between; }
+  header input[type="text"] {
+    width: 100%;
+    color: #fff;
+    border: none;
+    background-color: transparent;
+    font: 400 35px didact, sans-serif; }
+  header input[type="text"]::-webkit-input-placeholder {
+    color: #fff; }
+  header input[type="submit"] {
+    width: 40px;
+    height: 36px;
+    border: none;
+    background-color: transparent;
+    background: url(../images/search.png) no-repeat;
+    outline: none;
+    text-indent: -100000px; }
+  header input:focus {
+    outline: none; }
+  header form {
+    margin-right: 16%;
+    -webkit-flex-basis: 51.85%;
+    -moz-flex-basis: 51.85%;
+    -ms-flex-basis: 51.85%;
+    flex-basis: 51.85%; }
+  header .search {
+    border-bottom: 1px solid #fff;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+    align-items: center; }
+  header nav {
+    border-top: 2px solid #000;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #0f69d6; }
+    header nav ul {
+      list-style-type: none; }
+    header nav li {
+      padding: 10px 0;
+      text-align: center; }
+    header nav li:hover {
+      background-color: #4286f4; }
+    header nav a {
+      width: 100%;
+      color: #fff;
+      font: 700 18px opensans, sans-serif;
+      text-decoration: none;
+      text-transform: uppercase; }
+    header nav li:nth-child(1) {
+      padding-top: 15px; }
+  header .burger {
+    cursor: pointer; }
+  header .burger:hover > nav {
+    display: block; }
+
+/*main start*/
+/*news start*/
+.news a {
+  text-decoration: none;
+  color: #333333; }
+.news .news-flex {
+  padding-top: 22px; }
+.news .snoop, .news .beautiful, .news .sweet {
+  position: relative; }
+.news h2 {
+  padding: 8px 64px 14px  18px;
+  position: absolute;
+  bottom: 0;
+  color: #333333;
+  background-color: #e8e8e8;
+  font: 400 34px/38px didact, sans-serif; }
+.news h3 {
+  width: 77.41%;
+  padding: 14px 23px 12px 15px;
+  position: absolute;
+  bottom: 0;
+  background-color: #e8e8e8;
+  color: #333333;
+  font: 600 15px/22px opensans, sans-serif; }
+.news .sweet {
+  margin-top: 4px; }
+.news .snoop:hover, .news .sweet:hover, .news .beautiful:hover {
+  opacity: 0.7; }
+.news .female {
+  margin-left: 3px; }
+
+/*hollywood start*/
+.hollywood .hollywood-flex {
+  margin: 30px 0 40px;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+.hollywood .foster {
+  border: 1px solid #cfcfcf;
+  margin-bottom: 20px;
+  flex-basis: 32.02%; }
+.hollywood .foster-content {
+  margin-top: -54px;
+  position: relative; }
+.hollywood h3 {
+  box-sizing: border-box;
+  width: 33%;
+  padding: 2px 15px 3px 17px;
+  background-color: #454545;
+  color: #fff;
+  font: 400 14px opensans, sans-serif;
+  word-wrap: break-word; }
+.hollywood p {
+  width: 74.12%;
+  padding: 8px 23px 73px 15px;
+  background-color: #e8e8e8;
+  font: 400 15px/20px opensans, sans-serif; }
+.hollywood a:hover, .hollywood h3:hover {
+  opacity: 0.7; }
+.hollywood a {
+  color: #666666;
+  text-decoration: none; }
+.hollywood .add {
+  margin: 10px 0 30px;
+  flex-basis: 100%;
+  text-align: center; }
+
+/*bp-medium start 1024px */
+@media only screen and (max-width: 1024px) {
+  .container {
+    /*nav start*/
+    /*nav end*/ }
+    .container nav {
+      border-top: 2px solid #000;
+      position: absolute;
+      display: block;
+      top: 100%;
+      right: 0;
+      left: 0;
+      z-index: 2;
+      background-color: #0f69d6; }
+      .container nav ul {
+        list-style-type: none; }
+      .container nav li {
+        padding: 10px 0;
+        text-align: center; }
+      .container nav li:hover {
+        background-color: #4286f4; }
+      .container nav a {
+        width: 100%;
+        color: #fff;
+        font: 700 18px opensans, sans-serif;
+        text-decoration: none;
+        text-transform: uppercase; }
+      .container nav li:nth-child(1) {
+        padding-top: 15px; }
+    .container .burger {
+      cursor: pointer; }
+    .container .burger:hover > nav {
+      display: block; }
+    .container h1 {
+      padding-top: 10px; }
+    .container .burger {
+      top: 0;
+      right: 0; }
+    .container .burger img {
+      width: auto;
+      height: auto; }
+    .container header form {
+      padding-bottom: 3%;
+      margin: 6% 0 0;
+      flex-basis: 40%; }
+    .container header input[type="text"] {
+      font-size: 25px;
+      text-align: center; }
+    .container header input[type="submit"] {
+      margin-bottom: 5px; }
+    .container .news .news-flex {
+      flex-wrap: wrap; }
+    .container .news .snoop {
+      margin-bottom: 10px;
+      flex-basis: 100%; }
+    .container .news a {
+      display: block; }
+    .container .news h2 {
+      position: static;
+      font-size: 30px;
+      font-size: 1.875rem; }
+    .container .news h3 {
+      width: auto;
+      position: static;
+      font-size: 14px;
+      font-size: 0.875rem; }
+    .container .news .female {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+    .container .news .sweet {
+      margin-top: 0;
+      flex-basis: 49%; }
+    .container .news .beautiful {
+      margin-bottom: 10px;
+      flex-basis: 49%; }
+    .container .hollywood .foster {
+      margin-bottom: 20px;
+      flex-basis: 48%; }
+    .container .hollywood .foster-content {
+      margin-top: -1px;
+      position: static; }
+    .container .hollywood .add {
+      order: 1; }
+    .container .hollywood p {
+      width: 100%;
+      box-sizing: border-box; }
+    .container .hollywood h3 {
+      width: 100%; } }
+
+/*bp-small start 480px*/
+@media only screen and (max-width: 480px) {
+  .container form {
+    display: none; }
+  .container .news .female {
+    display: block; }
+  .container .news h2 {
+    padding-right: 14px;
+    font-size: 20px; }
+  .container .hollywood .foster {
+    flex-basis: 100%; } }
+
+/*# sourceMappingURL=style.css.map */
