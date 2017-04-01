@@ -40,7 +40,7 @@ header {
 	.header-flex {
 		@extend %flex;
 		@include alignitems(center);
-		justify-content: space-between;
+		@include justify-content(space-between);	
 	}
 
 	input[type="text"]{
@@ -159,8 +159,8 @@ header {
 	.hollywood-flex {
 		margin: 30px 0 40px;
 		@extend %flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);	
 	}
 
 	.foster {
@@ -200,7 +200,7 @@ header {
 
 	.add {
 		margin: 10px 0 30px;
-		flex-basis: 100%;
+		@include flex-basis(100%);
 		text-align: center;
 		}
 }
@@ -281,11 +281,11 @@ header {
 
 		.news {
 
-		.news-flex { flex-wrap: wrap;}
+		.news-flex { @include flex-wrap(wrap); }
 
 		 .snoop { 
 		 margin-bottom: 10px;
-		 flex-basis: 100%; 
+		 @include flex-basis(100%);
 		 }
 
 		 a { display: block; } 
@@ -303,26 +303,26 @@ header {
 
 	 	 .female { 
 	 	 margin: 0;
-	 	 display: flex;
-	 	 flex-wrap: wrap;
-	 	 justify-content: space-between;
+	 	 @include flexbox;
+	 	 @include flex-wrap(wrap);
+	 	 @include justify-content(space-between);
 	 	 }
 
 	 	 .sweet { 
 	 	 margin-top: 0;
-	 	 flex-basis: 49%;
+	 	 @include flex-basis(49%);
 	 	 	 }
 
 	 	 .beautiful { 
 	 	margin-bottom: 10px;
-	 	flex-basis: 49%; }
+	 	@include flex-basis(49%); }
 	 	 }
 
 		.hollywood{
 
 			.foster { 
 			margin-bottom: 20px;	
-			flex-basis: 48%;
+			@include flex-basis(48%);
 			}
 
 			.foster-content {
@@ -360,6 +360,6 @@ header {
 			
 		}
 			
-		.hollywood .foster { flex-basis: 100%; }
+		.hollywood .foster { @include flex-basis(100%); }
 	}
 }	
